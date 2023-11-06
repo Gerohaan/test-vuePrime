@@ -12,13 +12,22 @@ export const useProductsStore  = defineStore('products', {
       products: ref(),
       filterProduct: ref([]),
       noResult: ref(false),
-      cartList: []
+      cartList: [],
+      totalCart: ref(0)
     };
   },
   getters: {
    getProducts(state) {
       state.products = service.getProducts() 
       return state.products
+    },
+    getcartList(state){ 
+      return state.cartList
+    },
+    getTotalCart(state){
+      let cartList = state.cartList
+      let reduce = cartList.reduce((sum, current) => sum + parseFloat(current.price), 0)
+      return reduce
     }
   },
   actions: {

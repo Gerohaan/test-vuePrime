@@ -22,11 +22,8 @@
                                         <i class="pi pi-tag"></i>
                                         <span class="font-semibold">{{ slotProps.data.category }}</span>
                                     </span>
-                                    <!-- <Tag :value="slotProps.data.inventoryStatus" :severity="getSeverity(slotProps.data)"></Tag> -->
                                 </div>
                             </div>
-                            <!-- #D97706(danger)
-                            #10B981(primary) -->
                             <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
                                 <span class="text-2xl font-semibold">${{ slotProps.data.price }}</span>
                                 <Button @click="dinamicCard(slotProps.data)" icon="pi pi-shopping-cart" :style="slotProps.data.addCart ? 'background-color: #D97706' : ''" rounded :disabled="slotProps.data.inventoryStatus === 'OUTOFSTOCK'"></Button>
