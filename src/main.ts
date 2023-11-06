@@ -29,6 +29,7 @@ import Rating from 'primevue/rating'
 import ProgressBar from 'primevue/progressbar'
 import Listbox from 'primevue/listbox'
 import Tooltip from 'primevue/tooltip'
+import DataTable from 'primevue/datatable'
 const pinia = createPinia()
 const axios = new Axios
 const app = createApp(App)
@@ -52,6 +53,7 @@ app.component('DataViewLayoutOptions', DataViewLayoutOptions)
 app.component('DataViewLayoutOptions', Rating)
 app.component('ProgressBar', ProgressBar)
 app.component('Listbox', Listbox)
+app.directive('DataTable', DataTable)
 app.directive('tooltip', Tooltip)
 app.use(pinia)
 app.use(axios)
