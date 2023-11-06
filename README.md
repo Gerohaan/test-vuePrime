@@ -2,7 +2,7 @@
 
 # Local
 npm install
-#npm run dev
+npm run dev
 
 # Deploy
 https://productsprimevue.netlify.app/
