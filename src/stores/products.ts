@@ -37,17 +37,12 @@ export const useProductsStore  = defineStore('products', {
         if(this.cartList.find(item => item.id === param.id)){
           filter = this.cartList.filter(item => item.id !== param.id)
           this.cartList = filter
-          this.productOrig.find(el => el.id === param.id).addCart = false
-          this.products.find(el => el.id === param.id).addCart = false
         }else{
           this.cartList.push(param)
-          this.productOrig.find(el => el.id === param.id).addCart = true
-          this.products.find(el => el.id === param.id).addCart = true  
         }
       }else{
         this.cartList.push(param)
-        this.productOrig.find(el => el.id === param.id).addCart = true
-        this.products.find(el => el.id === param.id).addCart = true 
+        
       }
       
     },

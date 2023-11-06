@@ -17,9 +17,7 @@ class ProductService {
         try {
             const url = 'https://fakestoreapi.com/products'
             const response = await axios.get(url)
-            this.products.value = await response.data.map(item => {
-                return {...item, addCart: false}
-            })
+            this.products.value = await response.data
             
         } catch (error) {
             console.log(error)
