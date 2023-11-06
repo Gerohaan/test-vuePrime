@@ -26,7 +26,7 @@
                             </div>
                             <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
                                 <span class="text-2xl font-semibold">${{ slotProps.data.price }}</span>
-                                <Button @click="dinamicCard(slotProps.data)" icon="pi pi-shopping-cart" :style="slotProps.data.addCart ? 'background-color: #D97706' : ''" rounded :disabled="slotProps.data.inventoryStatus === 'OUTOFSTOCK'"></Button>
+                                <Button @click="dinamicCard(slotProps.data)" icon="pi pi-shopping-cart" :style="cartListVerify(slotProps.data) ? 'background-color: #D97706' : ''" rounded :disabled="slotProps.data.inventoryStatus === 'OUTOFSTOCK'"></Button>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watchEffect  } from "vue";
+import { ref, onMounted, watchEffect, computed   } from "vue";
 import { useProductsStore } from '../stores/products';
 const productsStore = useProductsStore();
 
@@ -49,6 +49,13 @@ const dinamicCard = (param: {}) => {
     productsStore.dinamicCart(param)   
 }
 
+const cartListVerify = (param: {}) => {
+    if(productsStore.cartList.find(item => item.id === param.id)){
+        return true
+    }else{
+        return false
+    }    
+}
 
 onMounted(() => {
     productsStore.productsAll()

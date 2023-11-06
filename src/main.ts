@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import { Axios } from 'axios'
 import App from './App.vue'
 
@@ -32,6 +33,7 @@ import Tooltip from 'primevue/tooltip'
 import DataTable from 'primevue/datatable'
 import OrderList from 'primevue/orderlist';
 const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
 const axios = new Axios
 const app = createApp(App)
 

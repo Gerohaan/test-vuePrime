@@ -27,7 +27,7 @@ export const useProductsStore  = defineStore('products', {
     getTotalCart(state){
       let cartList = state.cartList
       let reduce = cartList.reduce((sum, current) => sum + parseFloat(current.price), 0)
-      return reduce
+      return reduce.toFixed(2)
     }
   },
   actions: {
@@ -86,5 +86,8 @@ export const useProductsStore  = defineStore('products', {
         throw error 
       }
     }
+  },
+  persist: {
+    storage: sessionStorage
   },
 });
