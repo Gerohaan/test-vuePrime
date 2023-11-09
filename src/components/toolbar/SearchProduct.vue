@@ -1,5 +1,5 @@
 <template>
-    <div class="p-inputgroup">
+    <div class="mb-2 p-inputgroup">
         <span class="p-inputgroup-addon">
         <i class="pi pi-search"></i>
         </span>

@@ -1,5 +1,5 @@
 <template>
-    <Button :disabled="products.length === 0" class="mr-3" :label="'Cart $'+productsStore.getTotalCart" icon="pi pi-shopping-cart" @click="visible = true"/>
+    <Button :disabled="products.length === 0" class="mr-3 mb-2" :label="'Cart $'+productsStore.getTotalCart" icon="pi pi-shopping-cart" @click="visible = true"/>
     <Dialog v-model:visible="visible" modal :header="'Total Shopping Cart: $'+productsStore.getTotalCart" :style="{ width: '50rem' }" :breakpoints="{ '1199px': '75vw', '575px': '90vw' }">
         <div class="card">
             <DataView :value="products">

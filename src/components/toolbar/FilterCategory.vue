@@ -1,5 +1,5 @@
 <template>
-    <Dropdown showClear v-model="selectedCategory" :options="categories" placeholder="Filter by category" class="mr-3 w-full md:w-14rem" />
+    <Dropdown showClear v-model="selectedCategory" :options="categories" placeholder="Filter by category" class="mr-3 mb-2 w-full md:w-14rem" />
 </template>
 <script setup lang="ts">
 import { ref, onMounted, watchEffect, watch } from 'vue'

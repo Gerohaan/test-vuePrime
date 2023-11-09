@@ -13,6 +13,7 @@ import '/node_modules/primeflex/primeflex.css'
 import 'primeflex/primeflex.css'
 
 import Panel from 'primevue/panel'
+import StyleClass from 'primevue/styleclass'
 import Toolbar from 'primevue/toolbar'
 import Button from 'primevue/button'
 import Dropdown from 'primevue/dropdown'
@@ -59,6 +60,7 @@ app.component('Listbox', Listbox)
 app.component('DataTable', DataTable)
 app.component('OrderList', OrderList)
 app.directive('tooltip', Tooltip)
+app.directive('styleclass', StyleClass);
 app.use(pinia)
 app.use(axios)
 app.mount('#app')
